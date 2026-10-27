@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.db
+.env
+tmp/
+*.log
+preview*.png
+README.md
+**/README.md
+.DS_Store
