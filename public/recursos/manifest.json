@@ -1,11 +1,11 @@
 {
   "inputs": {
-    "recursos/01-seguridad-web-y-confianza.md": "c8b8b6b88845d9bac5cce1145f4bcb228f5801ca0ff10bd6281982889d09b18e",
-    "recursos/02-inyeccion-sql.md": "292370f04a9ca9f02038a96cdf9e88800b509af0e865f17f43fdaf6f1e782311",
-    "recursos/03-xss-y-navegador.md": "0a5128baac526552189b6ca971107b42b72d71b830375c58e095c456750884d1",
-    "recursos/04-csrf-y-acciones.md": "0feeba0703c9866df47a80fdeff149caf4e02b1a55f58e84673001c68310ae2c",
-    "recursos/05-sesiones-y-riesgos.md": "75dc5972128388233c06e4d1749cb4e4aba35a05e634d319a959e3de7b871eb9",
-    "recursos/06-laboratorio-y-prevencion.md": "ae4a92d24e2dc8709cd4b169539ce84090f3fa6ba72e031fba090d7d8183a96b",
+    "recursos/01-seguridad-web-y-confianza.md": "c6157e430675eba1e1b3d93d219955a770bc9c980cc04a60acd8da5f808a141c",
+    "recursos/02-inyeccion-sql.md": "8bf0f26dcb5b977c8b3ff796fae08b25b52200924f4aba74afbfb1d8113ebd66",
+    "recursos/03-xss-y-navegador.md": "fce02d945aef1891e107d48d0dad83573eb7a9434935acb0f78019aa4fb7ae6f",
+    "recursos/04-csrf-y-acciones.md": "2a711784977b131180c816ec362bf8307f4c0ee052c5c4ab7fd7968142b750d3",
+    "recursos/05-sesiones-y-riesgos.md": "563a2af15ead2acf8757b1dc16a17da67f34460f48f492d629b93c351ab8d7f5",
+    "recursos/06-laboratorio-y-prevencion.md": "95c4bc5cc878523d9fe6af09babe7d3c7114799002d256c22803d03a66d67a3b",
     "ejemplo-flask.md": "ebc964d48130182c25aac99085c8f568748adbcdcd8146f16bcda10886ce30d2",
     "laboratorio-flask/main.py": "e9f836b5d213383f60e7e1d00c7639cc550fdb71d2bd5781c33daacaf7ddcad4",
     "laboratorio-flask/app.py": "099bf17e8d6772ac0d10943aecfcc029fe5d46b7e348b4243d9abb9e5f2a3821",
@@ -13,16 +13,16 @@
     "laboratorio-flask/INICIAR.cmd": "3ab2b259f75f69d184dba24339b4118258876d5c831d4c89bc730abae62eb0f2",
     "laboratorio-flask/comprobar.py": "bb03a1485f0d2c6769ca38fe6553d463ba97aac8f748a0a926119e2784a3eed2",
     "laboratorio-flask/instrucciones.md": "ebc964d48130182c25aac99085c8f568748adbcdcd8146f16bcda10886ce30d2",
-    "scripts/build-resources.py": "7a6726f60233d8ab688e1b9f92bb8fe2171e9d18905ffcaab23187b9f3fbdbb6"
+    "scripts/build-resources.py": "aac101aa8a9075e6ad3d4cc054500dbe83b0370c41c294b259b249383a8ba8fe"
   },
   "outputs": {
-    "public/recursos/01-seguridad-web-y-confianza.pdf": "07058ce1e640ffba1e68890b2acfc2a2c896c236bacd6ef917d53953515a12e8",
-    "public/recursos/02-inyeccion-sql.pdf": "f3e4d99cd89687f8b4bb764571c1fad38742bf9407819f3b9283998e36c22691",
-    "public/recursos/03-xss-y-navegador.pdf": "59d496d6fff12741add6fff28d8b9d937578936677cc90dc1c495a9327c76b09",
-    "public/recursos/04-csrf-y-acciones.pdf": "cf28673b356eb1390961b36dc9a36b38794a5efab485b146a028383774d84ba3",
-    "public/recursos/05-sesiones-y-riesgos.pdf": "847b5d3464ccfa8c03c30b227168937a78e7b759dd903744dea24d923d5e6932",
-    "public/recursos/06-laboratorio-y-prevencion.pdf": "540365da3acd0bb2b362a29619a6c814a0f3e3311c0520b5fceec91dd4180b4b",
-    "public/recursos/ejemplo-flask.pdf": "4de0ccfb391e19c8c9b228c019b74308c867d1693889f1faaabf5133017ab6b5",
-    "public/recursos/laboratorio-flask.zip": "022d7eaf4c53f0b0f29b09cf7a607a158b9ac2ad726b7e8fdb481232c27565b0"
+    "public/recursos/01-seguridad-web-y-confianza.pdf": "d794e5fa8081b865bce49299ae06b5c0310d424111ae6ec5b6f8380af1dedd7a",
+    "public/recursos/02-inyeccion-sql.pdf": "2687d69e00d89fd756e2e78e811f68ba5f736f9b4cf379956969110a1c534147",
+    "public/recursos/03-xss-y-navegador.pdf": "956f747b50e852ea9de812a2f68efd41fb847ad3a47bc3fe917f1da743a5142a",
+    "public/recursos/04-csrf-y-acciones.pdf": "91e8007c215166c6d0948eb1f6f3ca9dab4a8fb32bd10d10a5db38c7e9cd4998",
+    "public/recursos/05-sesiones-y-riesgos.pdf": "421bde0c87c6e00bc41c344dd73839a86cbfac137bc751308d9c0826c7df2547",
+    "public/recursos/06-laboratorio-y-prevencion.pdf": "1e98deefd7163e13c2dadc4feb8112fb8a4103dbf074420fcb865347bbc6ec59",
+    "public/recursos/ejemplo-flask.pdf": "bc09a15ecf6cbf701a36c2c49e3de1eb6962df858f9646de7898852eb190165d",
+    "public/recursos/laboratorio-flask.zip": "0bf69b84c5d09a5a03bffa3d5a84fbcb04b8673dacc6cdc571f132d4a0ffce50"
   }
 }

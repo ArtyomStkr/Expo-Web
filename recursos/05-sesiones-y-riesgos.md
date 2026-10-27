@@ -15,6 +15,14 @@ El secuestro de sesión consiste en aprovechar una credencial válida de otra pe
 
 La fijación de sesión es distinta. En lugar de esperar a obtener una credencial después del acceso, el atacante intenta que la víctima utilice un identificador conocido antes de autenticarse y que ese identificador conserve la sesión autenticada. Podemos compararlo con dejar preparada una pulsera y lograr que después se habilite sin sustituirla. En sistemas con identificadores de sesión almacenados en el servidor, renovar ese identificador al autenticar reduce este riesgo. La implementación concreta depende del sistema; no todos los modelos de sesión funcionan de la misma manera.
 
+## Libreto de la comparación: Una credencial en otras manos.
+
+En las dos ventanas aparece la misma credencial ficticia. A la izquierda la envía el navegador de Ana para continuar una sesión que le pertenece. A la derecha la presenta otra persona desde otro navegador. La animación parte de que esa persona ya dispone de una copia; no muestra ni explica cómo se obtuvo.
+
+Después del clic, las dos ventanas reciben Bienvenida, Ana. En el lado normal es el resultado esperado. En el otro lado significa que alguien ajeno puede entrar con la identidad de Ana. El servidor reconoce la credencial válida, no a la persona físicamente sentada frente al navegador.
+
+No se escribió una contraseña ni se adivinó una cuenta. El problema es que una copia todavía aceptada conserva la sesión. Por eso debemos proteger la credencial, limitar cuánto dura e invalidarla cuando corresponda. La siguiente explicación de HTTPS, cookies y ciclo de vida responde a ese riesgo.
+
 ## Proteger el transporte y el navegador
 
 La primera capa es HTTPS. Cifra la comunicación y ayuda a protegerla frente a observadores en tránsito, dentro de su modelo de confianza. Para las cookies sensibles, el atributo Secure limita su envío a conexiones HTTPS. Ambos controles deben acompañarse: no basta con mostrar una dirección segura en una pantalla si el resto del flujo permite usar la credencial de manera insegura. En el laboratorio trabajaremos sobre HTTP de loopback, solo en la misma computadora. Esa excepción de demostración no debe copiarse como una configuración de producción.
@@ -40,6 +48,10 @@ Para cerrar mi parte, propongo cuatro preguntas sencillas: ¿cómo protegemos la
 ## Apoyo para comprender y ensayar
 
 Firmar permite comprobar integridad y autenticidad bajo una clave; cifrar busca ocultar el contenido. Revocar es dejar de aceptar una credencial, no simplemente ocultarla en la interfaz. Si surge la pregunta sobre doble factor, explicar que mejora la autenticación, pero una sesión válida sigue requiriendo protección. Hacer una pausa tras la analogía y otra antes de distinguir la cookie firmada de Flask. No mostrar credenciales reales en la exposición.
+
+## Indicaciones para presentar esta parte
+
+Después de la explicación de sesiones, avanzar a la comparación. Señalar primero quién utiliza cada navegador y luego que las credenciales son iguales. Esperar los dos saludos de Ana. No presentar el ejemplo como una demostración de captura de cookies: la copia ya existe al comenzar. Seguir con la comparación de riesgos.
 
 ## Diccionario de términos
 

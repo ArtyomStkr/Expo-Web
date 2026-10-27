@@ -7,6 +7,12 @@ Diapositivas de apoyo: Ejemplo práctico en Flask, prevención por capas y cierr
 
 Llegamos a la demostración. Hasta ahora analizamos las causas y los riesgos; ahora veremos diferencias concretas entre una implementación vulnerable y una corregida. Utilizaremos Flask, una herramienta de Python para crear aplicaciones web pequeñas. La base de datos será SQLite y contendrá únicamente dos registros ficticios. Todo se ejecutará en la misma computadora, en la dirección de loopback. No estamos probando páginas de terceros ni usando cuentas reales. Ese alcance permite observar el mecanismo sin exponer información ni depender de una conexión externa.
 
+## Conectar las animaciones con la práctica real
+
+Las comparaciones anteriores se reprodujeron dentro de las diapositivas. Vimos una búsqueda que devolvía datos ajenos, un comentario que producía un aviso falso, una solicitud que cambiaba un correo y una copia de sesión que permitía entrar como otra persona. Eran representaciones para reconocer cada causa y consecuencia.
+
+Ahora cambiamos al laboratorio Flask. Aquí sí enviamos peticiones a un servidor local y comparamos rutas vulnerables con rutas corregidas. En XSS utilizaremos el aviso inocuo DEMO LOCAL: cambia el mensaje respecto de la animación, pero demuestra la misma capacidad de ejecutar una instrucción. No bloquearemos cuentas ni robaremos datos. La práctica observa la cookie, pero no reproduce el secuestro de una sesión.
+
 ## Primera comparación: SQLi
 
 Comenzamos con la búsqueda normal. Escribimos Ana y obtenemos un registro. Esto establece una referencia de funcionamiento legítimo. A continuación, usamos la entrada de prueba en la ruta vulnerable. El resultado incluye los dos registros ficticios porque la cadena cambia la condición de la consulta construida por concatenación. No es necesario leer cada símbolo en voz alta. Señalemos que la entrada dejó de actuar solamente como un nombre y participó en la instrucción que recibe la base de datos. Esa es la causa que queremos identificar.
@@ -37,11 +43,15 @@ La quinta capa es la sesión: HTTPS, atributos de cookies, duración y mecanismo
 
 Podemos cerrar con una comparación que reúne las partes del grupo. SQLi enseña a separar los valores de las órdenes de base de datos. XSS enseña a separar el contenido de las instrucciones del navegador. CSRF enseña a no confundir una sesión presente con una acción intencional. La protección de sesiones enseña que una credencial temporal también necesita transporte seguro, límites y un final. Los controles se relacionan, pero cada uno responde a una pregunta diferente. Comprender esa diferencia nos ayuda a elegir una solución con fundamento.
 
-La seguridad web se diseña en decisiones pequeñas que se repiten: qué aceptamos, dónde lo usamos, qué mostramos y qué permitimos cambiar. No depende de que una página parezca sofisticada ni de añadir símbolos de candado. Depende de conservar el significado de los datos y verificar la confianza en cada paso. Con esto termina nuestra exposición. Las referencias oficiales están al final y los recursos del proyecto permiten repasar cada parte. Muchas gracias; ahora podemos escuchar sus preguntas y comentar las dudas que hayan quedado.
+La seguridad web se diseña en decisiones pequeñas que se repiten: qué aceptamos, dónde lo usamos, qué mostramos y qué permitimos cambiar. No depende de que una página parezca sofisticada ni de añadir símbolos de candado. Depende de conservar el significado de los datos y verificar la confianza en cada paso. Con esto termina nuestra exposición. Muchas gracias.
 
 ## Apoyo para ensayar y contingencia
 
-Ensayar cambios entre presentación, editor y navegador con Alt+Tab. Preparar las URL desde ejemplo-flask.md y ampliar el editor para que se lea. Si el entorno falla, usar capturas tomadas durante un ensayo y decir que son del laboratorio; no presentarlas como una ejecución en vivo. No reducir el texto por contar con preguntas: el mínimo de duración se calcula con el monólogo del grupo. Los clics y preguntas aportan margen adicional, no reemplazan contenido.
+Ensayar cambios entre presentación, editor y navegador con Alt+Tab. Preparar las URL desde ejemplo-flask.md y ampliar el editor para que se lea. Si el entorno falla, usar capturas tomadas durante un ensayo y decir que son del laboratorio; no presentarlas como una ejecución en vivo. El mínimo de duración se calcula con el monólogo del grupo. Las transiciones y la demostración aportan margen adicional, no reemplazan contenido. El cierre termina con Gracias, sin ronda de preguntas ni anuncio de recursos.
+
+## Indicaciones para presentar esta parte
+
+La diapositiva Ejemplo práctico en Flask conserva solo el título. Cambiar con Alt+Tab al laboratorio ya iniciado y seguir ejemplo-flask.md. Las animaciones no se controlan con el mouse; el laboratorio local real sí requiere usar sus formularios. Al volver, explicar la prevención por capas y terminar en Gracias. No mostrar el menú de recursos frente al público.
 
 ## Diccionario de términos
 

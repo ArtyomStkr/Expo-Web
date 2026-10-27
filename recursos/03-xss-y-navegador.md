@@ -1,7 +1,7 @@
 # XSS y el navegador
 
 
-Diapositivas de apoyo: Cross-site scripting, sus tres caminos y Mostrar texto. Evitar ejecutarlo. Ensayar a 125-145 palabras por minuto. Explicar los términos antes de señalar el fragmento técnico.
+Diapositivas de apoyo: Cross-site scripting, Un comentario provoca un aviso falso, sus tres caminos y Mostrar texto. Evitar ejecutarlo. Ensayar a 125-145 palabras por minuto. Explicar los términos antes de señalar el fragmento técnico.
 
 ## Una página también ejecuta instrucciones
 
@@ -10,6 +10,16 @@ Ya vimos lo que ocurre cuando una base de datos confunde valores con instruccion
 Cross-site scripting, o XSS, ocurre cuando contenido no confiable llega a uno de esos contextos y se ejecuta dentro del sitio. Para decirlo de forma más sencilla: una persona consigue que el navegador de otra trate su entrada como código de la página. El problema afecta la confianza que el visitante tiene en ese sitio. No estamos hablando necesariamente de instalar un programa en la computadora ni de modificar todos los archivos del servidor. El contexto principal de ejecución es la página que la víctima está visitando.
 
 Imaginemos una sección de comentarios. Ana publica un mensaje y Bruno abre la página para leerlo. La aplicación debería mostrar el comentario como contenido. Si, en cambio, inserta partes de ese mensaje de manera que puedan ejecutarse, el navegador de Bruno puede obedecer instrucciones aportadas por Ana. La aplicación hizo de intermediaria y dio al contenido una confianza que no debía tener. Por eso una entrada puede afectar a alguien distinto de quien la escribió. Esta diferencia ayuda a entender por qué XSS es un problema para los usuarios.
+
+## Libreto de la comparación: Un comentario provoca un aviso falso.
+
+Observemos primero la izquierda. Un estudiante escribe Hola, qué buen curso y publica el comentario. Ana abre la página y lee ese saludo. El contenido se comporta como lo que esperamos: un mensaje de texto. No aparece ninguna advertencia ni se ejecuta una instrucción.
+
+En la derecha, otra persona prepara un comentario que contiene una etiqueta script y una llamada a alert. Alert es una instrucción de JavaScript que abre un aviso. Dentro está la frase Tu cuenta fue bloqueada. Cuando la página vulnerable interpreta ese comentario como código, el navegador muestra la frase en una ventana que parece proceder del propio sitio.
+
+La cuenta de Ana no quedó bloqueada. Ese es precisamente el engaño: el aviso falso lo generó una entrada del atacante, no una decisión legítima de la plataforma. El resultado visible nos permite reconocer XSS sin imaginar robos invisibles: un comentario obtuvo capacidad de ejecutar una instrucción y alterar la experiencia de quien visita la página.
+
+La animación representa el mecanismo; no ejecuta ese script realmente. Después veremos las variantes de XSS y cómo mantener el contenido como texto para que no tenga esa capacidad.
 
 ## Tres maneras de llegar al navegador
 
@@ -33,13 +43,17 @@ En el navegador, si solamente queremos cambiar un texto, una opción segura es t
 
 En Flask, las plantillas HTML de Jinja escapan los valores de forma predeterminada. Podemos pasar un saludo como variable a una plantilla fija y permitir que se muestre como texto. El detalle importante es no desactivar esa protección con safe para contenido no confiable. También debemos evitar construir el código de la plantilla a partir de la entrada. Una plantilla fija que recibe un valor no es lo mismo que una entrada convertida en plantilla. Mantener esa separación reduce confusiones entre problemas del navegador y problemas del servidor.
 
-## Capas complementarias
+## Cerrar la explicación de XSS
 
 Podemos resumir XSS con una comparación: en SQLi se altera lo que interpreta la base de datos; en XSS se altera lo que interpreta el navegador. Las defensas no se intercambian. Parametrizar SQL no evita un comentario ejecutable y escapar HTML no corrige una consulta construida por concatenación. Ahora veremos otro problema relacionado con el navegador: enviar una acción con una sesión válida sin que la persona haya tenido esa intención. Mi compañero explicará CSRF y la diferencia entre reconocer una sesión y comprobar una acción.
 
 ## Apoyo para comprender y ensayar
 
 Pronunciar XSS como equis, ese, ese. DOM puede explicarse como el árbol de elementos de una página. Origen es la combinación de esquema, host y puerto que delimita una parte de la confianza del navegador. No es necesario leer esta última definición al público si complica la explicación. Reservar una pausa breve entre las tres variantes y pedir que imaginen un comentario frente a un enlace de búsqueda. El laboratorio lo realiza el último expositor.
+
+## Indicaciones para presentar esta parte
+
+Desde Cross-site scripting, avanzar a Un comentario provoca un aviso falso. Primero describir el saludo de la izquierda. Esperar el aviso de la derecha y aclarar de inmediato que no se bloqueó una cuenta real. No confundir esta animación con un robo de correo, cookies o contraseñas. No tocar Aceptar: es un elemento dibujado. Continuar a las variantes y la prevención con las flechas.
 
 ## Diccionario de términos
 
@@ -60,3 +74,5 @@ CSP: Política que restringe recursos y ejecuciones en el navegador; complementa
 textContent: Propiedad que coloca texto sin interpretarlo como HTML.
 
 Jinja: Motor de plantillas que Flask utiliza; escapa variables en plantillas HTML de forma predeterminada.
+
+alert: Instrucción de JavaScript que muestra un aviso en el navegador. Una entrada maliciosa puede usarla para generar un mensaje falso.

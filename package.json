@@ -9,7 +9,8 @@
     "preview": "vite preview --host 127.0.0.1",
     "resources": "node scripts/build-resources.mjs",
     "predev": "npm run resources",
-    "prebuild": "npm run resources"
+    "prebuild": "npm run resources",
+    "test:storyboards": "node scripts/test-storyboards.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

@@ -1,7 +1,7 @@
 # Seguridad web y confianza
 
 
-Diapositivas de apoyo: carátula, tres objetivos y recorrido de la información. Guion oral: leer con naturalidad, sin pronunciar los subtítulos. Ensayar a 125-145 palabras por minuto; las pausas y preguntas se agregan al tiempo de lectura.
+Diapositivas de apoyo: carátula, tres objetivos y recorrido de la información. Guion oral: leer con naturalidad, sin pronunciar los subtítulos. Ensayar a 125-145 palabras por minuto; las pausas y transiciones se agregan al tiempo de lectura.
 
 ## Apertura: lo que protegemos
 
@@ -33,9 +33,17 @@ Durante la exposición seguiremos la misma secuencia para cada ataque: qué sign
 
 Para cerrar esta introducción, quedémonos con una idea: la seguridad web consiste en conservar el significado de lo que recibimos y comprobar cada permiso. Un nombre debe seguir siendo un nombre. Un comentario debe presentarse de manera controlada. Una sesión debe servir a la persona que la inició y durante el tiempo previsto. A partir de aquí veremos cómo una confusión entre datos e instrucciones puede afectar a una base de datos. Mi compañero continuará con la inyección SQL y con una forma concreta de evitar esa confusión.
 
+## Cómo leer las comparaciones de la exposición
+
+Antes de continuar, aclaremos cómo veremos los ejemplos. Cada comparación tiene dos ventanas: a la izquierda aparece una acción normal y a la derecha vemos qué cambia cuando se aprovecha una vulnerabilidad. No necesitamos leer todos los símbolos del código. Observemos qué se escribe, qué acción se envía y qué resultado recibe la persona. Esa relación entre entrada y consecuencia es lo que vamos a explicar en cada caso.
+
 ## Apoyo para comprender y ensayar
 
 Servidor: programa que responde solicitudes. Base de datos: almacén organizado. Navegador: programa que interpreta la página. Petición: mensaje que solicita información o una acción. No leer este glosario como parte del monólogo; utilizarlo si aparecen dudas. Hacer una pausa después del ejemplo de la universidad y otra tras la pregunta sobre HTTPS. La pregunta puede responderla el público, pero el guion no depende de que alguien intervenga.
+
+## Indicaciones para presentar esta parte
+
+Presentar la carátula y el contexto. Las comparaciones empiezan después de la explicación de SQLi; esta parte no tiene una prueba propia. No anunciar archivos, descargas ni un turno de preguntas al público.
 
 ## Diccionario de términos
 

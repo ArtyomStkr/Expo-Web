@@ -19,6 +19,14 @@ Modificar el estado significa cambiar algo persistente o significativo: guardar 
 
 Los riesgos dependen de las operaciones disponibles. En un sistema podría cambiarse un correo de contacto; en otro, una preferencia o una acción administrativa. El ataque no necesita devolver la respuesta al sitio externo para provocar un daño. Puede ser suficiente con que la acción se acepte. Esta es una diferencia útil respecto a la idea de robar información: algunas amenazas buscan que algo ocurra, aunque quien las provoca no pueda leer directamente la respuesta. El servidor debe proteger la operación, no solamente la visualización de los datos.
 
+## Libreto de la comparación: La misma cuenta. Otra intención.
+
+En la izquierda estamos dentro del perfil de Ana. Ella solicita cambiar su correo a ana.nuevo y utiliza el formulario del sitio. El servidor recibe el flujo esperado, con su comprobación CSRF, y guarda el cambio elegido por la propia persona.
+
+En la derecha, Ana sigue conectada al campus, pero visita una página de premios. El botón dice Ver mi cupón. Detrás, esa página prepara otra acción: enviar a la cuenta de Ana un correo que pertenece a un tercero. Cuando se representa el clic, observemos el correo guardado. El sitio vulnerable aceptó una modificación que Ana no pidió porque confió únicamente en la cookie.
+
+Esta comparación supone que el navegador permite adjuntar la cookie. SameSite puede impedir determinados envíos; no afirmamos que cualquier página externa siempre pueda hacerlo. La diferencia con XSS es que aquí mostramos una solicitud inducida desde otra página, no un script publicado como comentario.
+
 ## La diferencia con XSS
 
 XSS y CSRF pueden afectar al mismo usuario, pero no describen la misma causa. En XSS, contenido no confiable se ejecuta en el contexto de una página. En CSRF, una página externa induce una petición que aprovecha credenciales enviadas automáticamente. Una forma de recordarlo es pensar en ejecutar dentro del sitio frente a solicitar desde otro sitio. Esta comparación simplifica la explicación sin sustituir todos los detalles técnicos. También nos ayuda a entender por qué una defensa aplicada a un problema no necesariamente resuelve el otro.
@@ -40,6 +48,10 @@ Para cerrar, pensemos de nuevo en la plataforma de cursos. Una cookie válida pe
 ## Apoyo para comprender y ensayar
 
 CSRF se puede pronunciar letra por letra. Estado significa información o situación que cambia por una operación. Token no significa contraseña y no debe explicarse como un campo secreto por estar oculto. Si preguntan si usar POST basta, responder que no: también hace falta la validación. Hacer una pausa antes de comparar XSS con CSRF y otra antes de presentar el token. No añadir una segunda demostración en vivo en esta parte.
+
+## Indicaciones para presentar esta parte
+
+Abrir la comparación después de Una acción que nadie pidió. Señalar que las direcciones de las ventanas son diferentes. Esperar el cambio de correo antes de explicar el resultado. No decir que el atacante conoce la contraseña ni que la cookie se envía siempre. Continuar a la prevención de CSRF sin interactuar con las ventanas.
 
 ## Diccionario de términos
 

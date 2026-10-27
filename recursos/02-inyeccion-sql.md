@@ -17,6 +17,14 @@ El proceso tiene tres pasos. Primero, una entrada controlada por el usuario lleg
 
 En el laboratorio veremos una condición que resulta verdadera para todos los registros de una tabla ficticia. La aplicación vulnerable devolverá dos usuarios en lugar de uno. Esto muestra una pérdida de control sobre la selección de datos. No significa que todas las inyecciones SQL permitan hacer exactamente lo mismo. El efecto depende de la consulta, del motor de base de datos, de la biblioteca utilizada y de los permisos disponibles. Una demostración pequeña permite entender la causa sin afirmar que reproduce todos los escenarios posibles.
 
+## Libreto de la comparación: Una búsqueda. Dos resultados.
+
+Miremos las dos ventanas. A la izquierda, Ana busca su nombre y obtiene únicamente su registro. A la derecha no se introduce un nombre: aparece una cadena que agrega una condición a la consulta. No hace falta memorizarla; la parte importante es que expresa una condición verdadera. El programa vulnerable pega esa entrada en su orden SQL.
+
+Ahora observemos el resultado después del clic. En la izquierda seguimos viendo solo a Ana. En la derecha aparecen Ana y Bruno, con sus correos. Así se ve el problema: una búsqueda que debía devolver un registro terminó mostrando información de otra persona. No cambiamos ni borramos datos; estamos observando una lectura no autorizada.
+
+La siguiente diapositiva explica la prevención: enviar la estructura de la consulta y el valor por separado. La comparación animada muestra uso normal frente a abuso, no dos versiones de una defensa.
+
 ## Riesgos para personas y organizaciones
 
 El riesgo más fácil de visualizar es la lectura de información ajena. En nuestra universidad imaginaria, podrían aparecer expedientes que no corresponden al estudiante que consulta. En otro sistema podrían exponerse pedidos o datos de contacto. La información no necesita ser una contraseña para resultar sensible. Una lista de relaciones entre personas, actividades y horarios también puede causar daño. Por eso no deberíamos evaluar el problema solamente preguntando si alguien logra entrar como administrador. Ver datos sin permiso ya representa un incidente importante.
@@ -40,6 +48,10 @@ Con esto cerramos el ataque a la base de datos. Ahora cambiaremos de escenario: 
 ## Apoyo para comprender y ensayar
 
 SQL se puede pronunciar letra por letra. Fila equivale a registro; columna equivale a atributo. Parametrizar no es cifrar. Un ORM ayuda a construir consultas, pero sus operaciones de SQL directo también deben usarse correctamente. Si preguntan por contraseñas, explicar que su almacenamiento seguro es un tema adicional: no evita que otras consultas tengan SQLi. No ejecutar el laboratorio en esta parte para evitar repetir tiempo y contenido.
+
+## Indicaciones para presentar esta parte
+
+Desde Inyección SQL, avanzar una vez para abrir Una búsqueda. Dos resultados. Esperar la escritura, el clic y las dos tablas; narrar primero la izquierda y después la derecha. No usar mouse, Enter, formularios ni selectores: todo es animación. Avanzar después a la prevención. Volver a entrar reinicia la secuencia.
 
 ## Diccionario de términos
 

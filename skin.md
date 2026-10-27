@@ -42,7 +42,7 @@ Verde para mecanismos y controles; ámbar apagado para consecuencias. Reservar t
 
 ## Interacción
 
-Flechas derecha/izquierda para avanzar/retroceder. También arriba/abajo, PageUp/PageDown, espacio, retroceso, Home y End. Límites sin bucle. Ignorar repeticiones al mantener una tecla y combinaciones con Ctrl, Alt o Meta. El hash `#1` a `#16` permite abrir una diapositiva directamente. Un anuncio accesible comunica únicamente el título; no existen contadores ni indicadores de avance. Escape vuelve al menú, incluso desde #1.
+Flechas derecha/izquierda para avanzar/retroceder. También arriba/abajo, PageUp/PageDown, espacio, retroceso, Home y End. Límites sin bucle. Ignorar repeticiones al mantener una tecla y combinaciones con Ctrl, Alt o Meta. El hash `#1` a `#19` permite abrir una diapositiva directamente. Un anuncio accesible comunica únicamente el título; no existen contadores ni indicadores de avance. Escape vuelve al menú, incluso desde #1.
 
 No controles flotantes. F11 depende del navegador; la aplicación no muestra iconos ni solicita pantalla completa automáticamente.
 
@@ -55,3 +55,11 @@ Un fondo continuo con retícula desplazada, brillo suave y columnas de datos ani
 Pantalla inicial: dos acciones a la izquierda, Diapositivas y Descargar Recursos. Al abrir recursos se muestran los títulos de seis guiones y una guía de demostración, sin nombres de responsables. A la derecha, vista previa desplazable y descarga PDF. Un enlace separado descarga el ZIP del laboratorio listo para extraer. Los PDF se generan en carta con Arial 11 y separación compacta.
 
 El favicon SVG combina un escudo y símbolos de código en verde y negro. Los seis nombres del equipo se conservan en la carátula; los recursos no asignan partes a personas.
+
+## Comparaciones animadas
+
+Conservar las diapositivas originales de explicación. Agregar una diapositiva de ejemplo solamente para SQLi, XSS, CSRF y secuestro de sesión. En cada ejemplo, dos ventanas del mismo tamaño comparan uso normal a la izquierda con abuso de la vulnerabilidad a la derecha. Mantener la paleta verde y usar ámbar tenue para el resultado vulnerado.
+
+Toda la secuencia es automática al entrar: cursor gráfico, escritura de caracteres, clic, espera y aparición del resultado. No hay entradas reales, botones funcionales, opciones, indicadores de avance, contadores ni textos que enseñen a manejar la diapositiva. El cursor físico se oculta durante la presentación. Se navega con las flechas; una prueba no avanza sola a la siguiente diapositiva y se reproduce de nuevo al volver a entrar.
+
+El cierre muestra únicamente Gracias. Los recursos pertenecen al menú del equipo y no se anuncian dentro de las diapositivas. Las preferencias de movimiento reducido muestran el estado final de la comparación sin reproducir el movimiento.

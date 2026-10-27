@@ -22,8 +22,8 @@ if not font.exists() or not bold.exists():
 pdfmetrics.registerFont(TTFont('Arial', str(font)))
 pdfmetrics.registerFont(TTFont('Arial-Bold', str(bold)))
 styles = {
-    'body': ParagraphStyle('body', fontName='Arial', fontSize=11, leading=12, spaceAfter=3),
-    'heading': ParagraphStyle('heading', fontName='Arial-Bold', fontSize=11, leading=12, spaceBefore=5, spaceAfter=3, keepWithNext=True),
+    'body': ParagraphStyle('body', fontName='Arial', fontSize=11, leading=11.5, spaceAfter=2),
+    'heading': ParagraphStyle('heading', fontName='Arial-Bold', fontSize=11, leading=11.5, spaceBefore=4, spaceAfter=2, keepWithNext=True),
 }
 
 class CompactCanvas(canvas.Canvas):
